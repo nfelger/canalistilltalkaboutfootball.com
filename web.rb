@@ -17,4 +17,5 @@ get '/refresh_score' do
   doc = Nokogiri::HTML(html)
   torres_goals = doc.css('table.fulltable tr:contains("Torres")').first.text.split.last
   REDIS.set("torres_goals", torres_goals)
+  redirect_to '/'
 end
