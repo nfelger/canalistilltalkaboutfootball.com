@@ -9,7 +9,7 @@ configure do
 end
 
 get '/' do
-  erb :'index.html', :locals => {:goals => REDIS.get("torres_goals")}
+  erb :'index.html', :locals => {:goals => REDIS.get("torres_goals").to_i}
 end
 
 get '/refresh_score' do

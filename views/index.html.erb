@@ -22,7 +22,7 @@
   </head>
   <body>
     <h1 class="content answer">
-      Yes
+      <%= goals < 20 ? "Yes" : "Nope" %>
     </h1>
     <p>
       Torresinho scored <%= goals %> out of 20.
