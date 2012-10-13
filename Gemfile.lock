@@ -5,6 +5,7 @@ GEM
     eventmachine (1.0.0)
     nokogiri (1.5.5)
     rack (1.4.1)
+    redis (3.0.2)
     sinatra (1.1.0)
       rack (~> 1.1)
       tilt (~> 1.1)
@@ -19,5 +20,6 @@ PLATFORMS
 
 DEPENDENCIES
   nokogiri
+  redis
   sinatra (= 1.1.0)
   thin
