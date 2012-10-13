@@ -4,19 +4,24 @@
     <title>Yes.</title>
     <style type="text/css" media="screen">
       * { margin: 0; padding: 0 }
-      body
-      {
-        font-family: "Trebuchet MS", "Helvetica Neue", Helvetica, sans-serif;
+      body {
+        font-family: Georgia, Times, "Times New Roman", serif;
+        font-size: 16px;
       }
-
-      h1
-      {
+      h1 {
         position:relative;
         clear:left;
         height: 1.025em;
         text-align: center;
         letter-spacing: -20px;
         font-size: 400px;
+        font-family: "Trebuchet MS", "Helvetica Neue", Helvetica, sans-serif;
+      }
+      p {
+        text-align: center;
+      }
+      small {
+        font-size: 0.75em;
       }
     </style>
   </head>
@@ -25,9 +30,12 @@
       <%= goals < 20 ? "Yes" : "Nope" %>
     </h1>
     <p>
-      Torresinho scored <%= goals %> out of 20.
+      So far, El Niño has <%= goals %> goals to his name.<br>
+      <% if goals < 20 %>
+        Will he make it to 20?<br>
+      <% end %>
       <small>
-        Out of date? <a href="/refresh_score">Refresh</a>
+        Score out of date? <a href="/refresh_score">Refresh</a>
       </small>
     </p>
   </body>
