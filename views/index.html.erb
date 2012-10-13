@@ -18,6 +18,9 @@
       p {
         text-align: center;
       }
+      p em {
+        font-size: 1.1875em;
+      }
       small {
         font-size: 0.75em;
       }
@@ -28,7 +31,7 @@
       <%= goals < 20 ? "Yes" : "Nope" %>
     </h1>
     <p>
-      So far, El Niño has <%= goals %> goals to his name.<br>
+      So far, El Niño has <em><%= goals %> goals to his name.</em><br>
       <% if goals < 20 %>
         Will he make it to 20?<br>
       <% end %>
