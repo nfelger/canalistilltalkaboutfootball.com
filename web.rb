@@ -13,9 +13,10 @@ get '/' do
 end
 
 get '/refresh_score' do
-  html = open('http://news.bbc.co.uk/sport1/hi/football/eng_prem/top_scorers/default.stm') { |file| file.read}
+  url = 'http://news.bbc.co.uk/sport1/shared/bsp/hi/football/statistics/players/t/torres_250968.stm'
+  html = open(url) { |file| file.read}
   doc = Nokogiri::HTML(html)
-  torres_goals = doc.css('table.fulltable tr:contains("Torres")').first.text.split.last
+  torres_goals = doc.css('table.protables')[3].css('tr')[1].css('.c4').text
   REDIS.set("torres_goals", torres_goals)
   redirect '/'
 end
